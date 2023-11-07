@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Nextfactor</groupId>
+  <artifactId>Srinivasulu_chevula_RestfulAndSoapWS</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <build>
+    <plugins>
+        <!-- Other plugins -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version> <!-- Use the version you need -->
+            <configuration>
+                <includes>
+                    <include>**/*CucumberTestRunner.java</include>
+                </includes>
+            </configuration>
+        </plugin>
+       
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version> <!-- Adjust the version as needed -->
+
+            <configuration>
+                <includes>
+                    <include>**/*Test.java</include> <!-- Include test classes -->
+                </includes>
+                <!-- You can configure more options here if needed -->
+            </configuration>
+        </plugin>
+        
+     
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version> <!-- Adjust the version as needed -->
+
+            <configuration>
+                <source>1.8</source> <!-- Set your desired source version -->
+                <target>1.8</target> <!-- Set your desired target version -->
+            </configuration>
+        </plugin>
+
+
+  
+
+        <!-- Other plugins -->
+    </plugins>
+</build>
+
+  <dependencies>
+    <!-- Other dependencies -->
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.13</version> <!-- Use the latest version -->
+        
+    </dependency>
+    <!-- Other dependencies -->
+  
+    <!-- Other dependencies -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.32</version> <!-- Use the latest version -->
+    </dependency>
+    
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.8.0</version> <!-- Use the version you require -->
+        <scope>test</scope>
+    </dependency>
+    <!-- Other dependencies -->
+
+    <!-- Other dependencies -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.6</version> <!-- Use the latest version -->
+    </dependency>
+    <!-- Other dependencies -->
+
+    <!-- Other dependencies -->
+
+    <!-- Other dependencies -->
+   
+
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.14.0</version> <!-- Use the desired version -->
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.14.0</version> <!-- Use the desired version -->
+        <scope>test</scope>
+    </dependency>
+
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+
+
+
+
+
+
+
+
+</dependencies>
+
+<repositories>
+    <repository>
+        <id>cucumber-java</id>
+        <url>https://repository.cucumber.io/content/repositories/releases/</url>
+    </repository>
+</repositories>
+
+
+</project>
