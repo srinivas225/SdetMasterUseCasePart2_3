@@ -80,7 +80,22 @@
                 </executions>
             </plugin>
 
-  
+    <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.6.0</version> <!-- Use the version you need -->
+            <executions>
+                <execution>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <!-- Configuration options -->
+            </configuration>
+        </plugin>
 
         <!-- Other plugins -->
     </plugins>
