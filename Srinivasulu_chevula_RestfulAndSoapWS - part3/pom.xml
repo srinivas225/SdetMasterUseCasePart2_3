@@ -61,6 +61,24 @@
           <!-- Other Surefire configurations if needed -->
         </configuration>
       </plugin>
+       <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>6.7.0</version>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <projectName>My Cucumber Test Project</projectName>
+              <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+              <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
       <!-- Cucumber Reporting Plugin -->
      
