@@ -1,5 +1,0 @@
-com\masterUsecse\soapUI\AssertionTestng.class
-stepdefinitions\HttpPostStepDefinitions.class
-com\masterUsecse\soapUI\AssertionTestng$HttpPostTest.class
-stepdefinitions\HttpGetStepDefinitions.class
-cucumberOptions\CucumberRunner.class
