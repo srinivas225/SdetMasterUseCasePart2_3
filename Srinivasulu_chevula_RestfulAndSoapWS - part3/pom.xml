@@ -1,151 +1,153 @@
+Certainly, here's the full adjusted POM file:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Nextfactor</groupId>
-  <artifactId>Srinivasulu_chevula_RestfulAndSoapWS</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>Nextfactor</groupId>
+    <artifactId>Srinivasulu_chevula_RestfulAndSoapWS</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-  <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-  </properties>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
-  <dependencies>
-    <!-- Other dependencies -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.13</version>
-    </dependency>
+    <dependencies>
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+        </dependency>
 
-    <!-- Other dependencies -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.32</version>
-    </dependency>
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version>
+        </dependency>
 
-    <!-- Cucumber dependencies -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>7.14.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>7.14.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.8.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-<plugins>
-      <!-- Maven Surefire Plugin -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <configuration>
-          <includes>
-            <include>**/*Test.java</include>
-            <include>**/*CucumberTestRunner.java</include>
-          </includes>
-          <!-- Other Surefire configurations if needed -->
-        </configuration>
-      </plugin>
-
-      <!-- Cucumber Reporting Plugin -->
-      
-       <plugin>
-            <groupId>net.masterthought</groupId>
-            <artifactId>maven-cucumber-reporting</artifactId>
-            <version>5.0.0</version>
-            <!-- Other configuration parameters if needed -->
-        </plugin>
-          <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M5</version>
-    <configuration>
-        <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-        </suiteXmlFiles>
-    </configuration>
-</plugin>
-<plugin>
+        <!-- Cucumber dependencies -->
+        <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-maven-plugin</artifactId>
-            <version>7.14.0</version> <!-- Use the latest version available -->
-            <executions>
-                <execution>
-                    <id>run-acceptance-tests</id>
-                    <phase>verify</phase> <!-- Use the appropriate phase for your project -->
-                    <goals>
-                        <goal>test</goal>
-                    </goals>
-                    <configuration>
-                        <glue>stepdefinitions</glue>
-                        <features>src/test/resources/features</features>
-                        <tags>@all</tags> <!-- Add your desired tags here -->
-                        <plugin>
-                            <name>pretty</name>
-                        </plugin>
-                        <plugin>
-                            <name>html</name>
-                            <outputDirectory>${project.build.directory}/cucumberReport.html</outputDirectory>
-                        </plugin>
-                        <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <configuration>
-                        <parallel>none</parallel>
-                        <threadCount>1</threadCount>
-                        <disableXmlReport>true</disableXmlReport>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>Runnerclass</id>
-                            <phase>integration-test</phase>
-                            <goals>
-                                <goal>integration-test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                        <plugin>
-                            <name>json</name>
-                            <outputDirectory>${project.build.directory}/cucumberjson-report.json</outputDirectory>
-                        </plugin>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M5</version>
-    <configuration>
-        <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-        </suiteXmlFiles>
-    </configuration>
-</plugin>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.14.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.14.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.8.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-    </plugins>
-  </build>
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*CucumberTestRunner.java</include>
+                    </includes>
+                    <!-- Other Surefire configurations if needed -->
+                </configuration>
+            </plugin>
 
-  <repositories>
-    <repository>
-      <id>sonatype-oss-public</id>
-      <url>https://oss.sonatype.org/content/groups/public/</url>
-    </repository>
-  </repositories>
+            <!-- Cucumber Reporting Plugin -->
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.0.0</version>
+                <!-- Other configuration parameters if needed -->
+            </plugin>
+
+            <!-- Maven Failsafe Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <parallel>none</parallel>
+                    <threadCount>1</threadCount>
+                    <disableXmlReport>true</disableXmlReport>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>Runnerclass</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Surefire Plugin (Note: It's included again, check if needed) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+            <!-- Cucumber Maven Plugin -->
+            <plugin>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-maven-plugin</artifactId>
+                <version>7.14.0</version>
+                <executions>
+                    <execution>
+                        <id>run-acceptance-tests</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <glue>stepdefinitions</glue>
+                            <features>src/test/resources/features</features>
+                            <tags>@all</tags>
+                            <plugin>
+                                <name>pretty</name>
+                            </plugin>
+                            <plugin>
+                                <name>html</name>
+                                <outputDirectory>${project.build.directory}/cucumberReport.html</outputDirectory>
+                            </plugin>
+                            <plugin>
+                                <name>json</name>
+                                <outputDirectory>${project.build.directory}/cucumberjson-report.json</outputDirectory>
+                            </plugin>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>sonatype-oss-public</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
 </project>
+```
+
+Please replace your existing POM file content with this one. After making these changes, try running your Maven build again. If any issues persist, check the Maven output and logs for more details.
