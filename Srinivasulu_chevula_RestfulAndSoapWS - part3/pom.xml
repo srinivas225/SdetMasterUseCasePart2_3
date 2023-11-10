@@ -70,6 +70,18 @@
             <version>5.0.0</version>
             <!-- Other configuration parameters if needed -->
         </plugin>
+        
+    
+        <plugin>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-maven-plugin</artifactId>
+            <version>5.0.0</version>
+            <configuration>
+                <jsonReportsDirectory>${project.build.directory}/cucumber-reports/json</jsonReportsDirectory>
+            </configuration>
+        </plugin>
+   
+
     </plugins>
   </build>
 
