@@ -45,9 +45,8 @@
             <scope>test</scope>
         </dependency>
 
-<!--new  dependencies added--->
-
-         <dependency>
+        <!-- Remove duplicate Cucumber dependencies -->
+        <!-- <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.15.0</version>
@@ -58,7 +57,7 @@
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>7.15.0</version>
             <scope>test</scope>
-        </dependency>
+        </dependency> -->
         
     </dependencies>
 
@@ -120,20 +119,18 @@
             </plugin>
 
             <!-- Cucumber Maven Plugin -->
-             <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.0.0-M5</version>
-            <configuration>
-                <includes>
-                    <include>**/*Test.java</include>
-                    <include>**/*CucumberTestRunner.java</include>
-                </includes>
-                <!-- Other Failsafe configurations if needed -->
-            </configuration>
-        </plugin>
-
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*CucumberTestRunner.java</include>
+                    </includes>
+                    <!-- Other Failsafe configurations if needed -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -143,11 +140,9 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         
-    <repository>
-        <id>sonatype</id>
-        <url>https://oss.sonatype.org/content/repositories/releases</url>
-    </repository>
-
-
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+        </repository>
     </repositories>
 </project>
