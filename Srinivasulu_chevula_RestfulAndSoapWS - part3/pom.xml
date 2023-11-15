@@ -44,6 +44,22 @@
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
+
+<!--new  dependencies added--->
+
+         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+        
     </dependencies>
 
     <build>
@@ -104,36 +120,19 @@
             </plugin>
 
             <!-- Cucumber Maven Plugin -->
-            <plugin>
-                <groupId>io.cucumber</groupId>
-                <artifactId>cucumber-maven-plugin</artifactId>
-                <version>7.15.0</version>
-                <executions>
-                    <execution>
-                        <id>run-acceptance-tests</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <configuration>
-                            <glue>stepdefinitions</glue>
-                            <features>src/test/resources/features</features>
-                            <tags>@all</tags>
-                            <plugin>
-                                <name>pretty</name>
-                            </plugin>
-                            <plugin>
-                                <name>html</name>
-                                <outputDirectory>${project.build.directory}/cucumberReport.html</outputDirectory>
-                            </plugin>
-                            <plugin>
-                                <name>json</name>
-                                <outputDirectory>${project.build.directory}/cucumberjson-report.json</outputDirectory>
-                            </plugin>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+             <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <configuration>
+                <includes>
+                    <include>**/*Test.java</include>
+                    <include>**/*CucumberTestRunner.java</include>
+                </includes>
+                <!-- Other Failsafe configurations if needed -->
+            </configuration>
+        </plugin>
+
 
         </plugins>
     </build>
